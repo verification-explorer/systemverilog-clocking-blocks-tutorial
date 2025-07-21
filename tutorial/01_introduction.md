@@ -41,3 +41,6 @@ endmodule
 ## This is hardware represantation of the xor_flop ##
 ![xor flop](/figures/xor_ff.png "xor flop")
 
+## The following plot shows the behaviour of the signals at rise edge of clk ##
+
+
