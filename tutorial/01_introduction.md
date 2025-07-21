@@ -42,5 +42,6 @@ endmodule
 ![xor flop](/figures/xor_ff.png "xor flop")
 
 ## The following plot shows the behaviour of the signals at rise edge of clk ##
+![xor flop_plot](/figures/xor_ff_plot.png "xor flop plot")
 
 
