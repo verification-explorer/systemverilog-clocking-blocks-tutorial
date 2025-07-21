@@ -38,3 +38,6 @@ module xor_flop (
 
 endmodule
 
+This is hardware represantation of the xor_flop
+![xor flop](/figures/xor_flop.png "xor flop")
+
