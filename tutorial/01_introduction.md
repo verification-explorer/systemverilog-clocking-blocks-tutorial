@@ -37,7 +37,7 @@ module xor_flop (
     end
 
 endmodule
-
+```
 This is hardware represantation of the xor_flop
-![xor flop](/figures/xor_flop.png "xor flop")
+![xor flop](/figures/xor_ff.png "xor flop")
 
