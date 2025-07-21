@@ -43,5 +43,12 @@ endmodule
 
 ## The following plot shows the behaviour of the signals at rise edge of clk ##
 ![xor flop_plot](/figures/xor_ff_plot.png "xor flop plot")
+Lets anlayze what happens step by step
+1. before rising edge of clk input = 1'b1 and output = 1'b0 which lead to xor_out = 1'b1
+2. at rising edge output changes output = 1'b0 which lead to xor_out changes xor_out = 1'b0
+
+But wait whats going on here?
+flop output changes xor output which changes flop input at the same time isn't it race condition?
+How the simulator can solve this condition?
 
 
