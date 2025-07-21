@@ -10,36 +10,31 @@ How can inputs and outputs can be sampled and updated at the same time?
 
 lets take a simple RTL code and analyze how the simulator works
 
-# Simple samplled half adder in SystemVerilog
+# XOR Flip-Flop in SystemVerilog
 
 ## Description
-The `samp_half_adder` module implements a **half-adder** whose outputs are **sampled on the rising edge of the clock (`clk`)**. It adds two 1-bit inputs (`a` and `b`) and produces:
-- `result`: The sum (exclusive OR of `a` and `b`).
-- `carry`: The carry-out (AND of `a` and `b`).
+The `xor_flop` module defines a **sequential XOR-based flip-flop**. On every rising edge of the clock (`clk`), the output `out` is updated by performing a **bitwise XOR** between the **current output (`out`)** and the **input (`in`)**.
 
-An **active-low asynchronous reset (`rst_n`)** initializes both outputs (`result` and `carry`) to zero.
+An **active-low asynchronous reset (`rst_n`)** initializes `out` to zero.
 
 ## SystemVerilog Code
 ```systemverilog
-module samp_half_adder (
-    input  logic clk,      // Clock signal
-    input  logic rst_n,    // Active-low reset
-    input  logic a,        // Data input
-    input  logic b,        // Data input
-    output logic result,   // Data output
-    output logic carry   // Data output
+module xor_flop (
+    input  logic clk,    // Clock signal
+    input  logic rst_n,  // Active-low reset
+    input  logic in,     // Data input
+    output logic out     // Data output
 );
+
+    wire logic xor_out = out ^ in;
 
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            result <= 1'b0;
-            carry <= 1'b0;
-       end else begin
-            result <= a ^ b;
-            carry <= a & b;
-       end
+            out <= 1'b0;
+        end else begin
+            out <= xor_out;
+        end
     end
 
 endmodule
-
 
