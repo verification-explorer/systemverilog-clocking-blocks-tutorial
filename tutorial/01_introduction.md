@@ -54,4 +54,7 @@ The answer to this question lies in how the Verilog event scheduler operates, le
 
 ![verilog event scheduler](/figures/verilog_event_scheduler.png "verilog event scheduler")
 
+Following is a plot from analog simulation of the xor flop
+
+
 
