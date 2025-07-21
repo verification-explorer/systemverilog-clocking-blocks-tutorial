@@ -50,5 +50,6 @@ Lets anlayze what happens step by step
 But wait whats going on here?
 flop output changes xor output which changes flop input at the same time isn't it race condition?
 How the simulator can solve this condition?
+The answer to this question lies in how the Verilog event scheduler operates, lets review and understand this. 
 
 
