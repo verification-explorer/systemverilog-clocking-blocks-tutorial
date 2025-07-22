@@ -56,5 +56,7 @@ The answer to this question lies in how the Verilog event scheduler operates, le
 
 Following is a plot from analog simulation of the xor flop
 
+![xor flop_analog_plot](/figures/xor_ff_analog_plot.png "xor flop analog_plot")
+
 
 
