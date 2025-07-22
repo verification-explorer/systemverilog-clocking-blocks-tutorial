@@ -55,6 +55,8 @@ The answer to this question lies in how the Verilog event scheduler operates, le
 ![verilog event scheduler](/figures/verilog_event_scheduler.png "verilog event scheduler")
 
 Following is a plot from analog simulation of the xor flop
+In this plot we can see the flop output is changing 47ps after rise of clock (tCQ) and the xor output which is also flop input
+chnages 33ps after flop output changes (tProp). so we can see that unlike digital plot, flop input and output are not changing at the same time.
 
 ![xor flop_analog_plot](/figures/xor_ff_analog_plot.png "xor flop analog_plot")
 
