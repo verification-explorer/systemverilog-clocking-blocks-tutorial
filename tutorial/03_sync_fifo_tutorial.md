@@ -19,11 +19,11 @@ module uart_tx_fifo(
   );
 ```
 ```sv
-
   reg [3:0] ip_count;
   reg [3:0] op_count;
   reg [7:0] data_fifo [0:15]; // 16-entry FIFO
-
+```
+```sv
   always @(posedge clk or negedge rstn) begin
     if (~rstn) begin
       count <= 5'd0;
@@ -52,15 +52,18 @@ module uart_tx_fifo(
       endcase
     end
   end
-
+```
+```sv
   always @(*) begin
     data_out = data_fifo[op_count];
   end
-
+```
+```sv
   always @(*) begin
     fifo_empty = (count == 0);
   end
-
+```
+```sv
   always @(*) begin
     fifo_full = (count == 5'd16);
   end
