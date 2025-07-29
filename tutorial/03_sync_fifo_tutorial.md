@@ -46,7 +46,7 @@ module uart_tx_fifo(
   reg [3:0] op_count;
   reg [7:0] data_fifo [0:15]; // 16-entry FIFO
 ```
-### Main Control Logic (`always @(posedge clk or negedge rstn)`)
+### Main Control Logic
 
 This block implements the core logic of the FIFO:
 
