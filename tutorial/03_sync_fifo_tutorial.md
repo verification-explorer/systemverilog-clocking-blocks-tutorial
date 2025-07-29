@@ -141,3 +141,25 @@ It indicates that the FIFO is full when the internal `count` reaches 16, which i
 endmodule
 
 ```
+As mentioned earlier, this design was synthesized using **OpenLane** with the **Yosys synthesizer**.  
+Below is a snapshot from the generated **gate-level netlist**.
+```sv
+  sky130_fd_sc_hd__a211o_2 _0522_ (
+    .A1(\data_fifo[7][0] ),
+    .A2(_0154_),
+    .B1(_0162_),
+    .C1(_0175_),
+    .X(_0176_)
+  );
+  sky130_fd_sc_hd__nor4_2 _0523_ (
+    .A(_0155_),
+    .B(_0156_),
+    .C(_0163_),
+    .D(_0152_),
+    .Y(_0177_)
+  );
+  sky130_fd_sc_hd__buf_1 _0524_ (
+    .A(_0177_),
+    .X(_0178_)
+  );
+```
