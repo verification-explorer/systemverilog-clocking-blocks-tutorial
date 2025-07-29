@@ -46,6 +46,22 @@ module uart_tx_fifo(
   reg [3:0] op_count;
   reg [7:0] data_fifo [0:15]; // 16-entry FIFO
 ```
+### Main Control Logic (`always @(posedge clk or negedge rstn)`)
+
+This block implements the core logic of the FIFO:
+
+- On **reset (`~rstn`)**, it clears the counters:
+  - `count` – number of stored elements
+  - `ip_count` – input/write pointer
+  - `op_count` – output/read pointer
+
+- On each **clock edge**, it performs one of the following based on `push` and `pop` signals:
+  - `push = 0`, `pop = 1`: Read (pop) data from the FIFO if it's not empty.
+  - `push = 1`, `pop = 0`: Write (push) data to the FIFO if it's not full.
+  - `push = 1`, `pop = 1`: Simultaneous write and read (used to keep the FIFO full but rotating).
+
+This logic updates the pointers and element count to reflect the FIFO state.
+
 ```sv
   always @(posedge clk or negedge rstn) begin
     if (~rstn) begin
