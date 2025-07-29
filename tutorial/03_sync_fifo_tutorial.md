@@ -17,6 +17,8 @@ module uart_tx_fifo(
     output reg [4:0] count,
     output reg [7:0] data_out
   );
+```
+```sv
 
   reg [3:0] ip_count;
   reg [3:0] op_count;
