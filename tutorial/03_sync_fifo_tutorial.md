@@ -33,6 +33,14 @@ module uart_tx_fifo(
     output reg [7:0] data_out
   );
 ```
+### Internal Signal Descriptions
+
+| Signal Name     | Type        | Width    | Description |
+|------------------|-------------|----------|-------------|
+| `ip_count`       | `reg`       | 4 bits   | Input pointer: tracks the next write location in the FIFO memory (`data_fifo`). Incremented when `push` is asserted. |
+| `op_count`       | `reg`       | 4 bits   | Output pointer: tracks the next read location from the FIFO memory. Incremented when `pop` is asserted. |
+| `data_fifo[0:15]`| `reg` array | 16 x 8 bits | The actual FIFO memory: a 16-entry array where each entry holds 8-bit data. This stores the pushed data and serves as the source for `data_out`. |
+
 ```sv
   reg [3:0] ip_count;
   reg [3:0] op_count;
