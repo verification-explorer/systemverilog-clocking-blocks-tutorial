@@ -170,7 +170,7 @@ Later we are going to see SDF skews in the waves plot
 
 Below is a snapshot of the SDF file used in the simulation.
 
-```code
+```sdf
  (CELL
   (CELLTYPE "sky130_fd_sc_hd__a211o_2")
   (INSTANCE _0522_)
