@@ -5,6 +5,21 @@ For this tutorial, I chose a **synchronous FIFO RTL design** from the [Verificat
 Since **clocking blocks** are particularly beneficial in **gate-level simulations**, I synthesized the design using **OpenLane** (an [Efabless](https://efabless.com/) project) with the **Sky130 Process Design Kit (PDK)**.
 
 Let's walk through the design and understand how it works.
+
+### FIFO Port Descriptions
+
+| Port Name    | Direction | Width    | Description |
+|--------------|-----------|----------|-------------|
+| `clk`        | Input     | 1 bit    | Clock signal used to synchronize all FIFO operations. |
+| `rstn`       | Input     | 1 bit    | Active-low reset signal. When low, the FIFO is reset to its initial state. |
+| `push`       | Input     | 1 bit    | Push signal. When high, the input data (`data_in`) is written into the FIFO on the rising edge of the clock, if the FIFO is not full. |
+| `pop`        | Input     | 1 bit    | Pop signal. When high, the oldest data in the FIFO is read and output through `data_out` on the rising edge of the clock, if the FIFO is not empty. |
+| `data_in`    | Input     | 8 bits   | Data to be written into the FIFO when `push` is asserted. |
+| `fifo_empty` | Output    | 1 bit    | Indicates that the FIFO is empty (no data to read). |
+| `fifo_full`  | Output    | 1 bit    | Indicates that the FIFO is full (no space to write new data). |
+| `count`      | Output    | 5 bits   | The number of valid data elements currently stored in the FIFO. |
+| `data_out`   | Output    | 8 bits   | The data read from the FIFO when `pop` is asserted. |
+
 ```sv
 module uart_tx_fifo(
     input clk,
