@@ -92,16 +92,47 @@ This logic updates the pointers and element count to reflect the FIFO state.
     end
   end
 ```
+### Data Output Logic
+
+This combinational block assigns the output data:
+
+```verilog
+data_out = data_fifo[op_count];
+```
+
+It continuously reads the value from the FIFO at the current read pointer (`op_count`).  
+This ensures that `data_out` always reflects the next value to be popped from the FIFO.
+
 ```sv
   always @(*) begin
     data_out = data_fifo[op_count];
   end
 ```
+### FIFO Empty Flag Logic
+
+This combinational block sets the `fifo_empty` flag:
+
+```systemverilog
+fifo_empty = (count == 0);
+```
+
+It indicates that the FIFO is empty when the internal `count` is zero—i.e., there are no elements to read.
+
 ```sv
   always @(*) begin
     fifo_empty = (count == 0);
   end
 ```
+### FIFO Full Flag Logic
+
+This combinational block sets the `fifo_full` flag:
+
+```systemverilog
+fifo_full = (count == 5'd16);
+```
+
+It indicates that the FIFO is full when the internal `count` reaches 16, which is the maximum capacity of the FIFO buffer.
+
 ```sv
   always @(*) begin
     fifo_full = (count == 5'd16);
