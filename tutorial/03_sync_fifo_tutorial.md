@@ -163,3 +163,24 @@ Below is a snapshot from the generated **gate-level netlist**.
     .X(_0178_)
   );
 ```
+
+To fully appreciate the benefits of using **clocking blocks**, we need to include the delays that naturally occur after the **place-and-route** stage.  
+These delays—such as propagation and skew—are captured in a file called an **SDF (Standard Delay Format)** file.
+Later we are going to see SDF skews in the waves plot
+
+Below is a snapshot of the SDF file used in the simulation.
+
+```code
+ (CELL
+  (CELLTYPE "sky130_fd_sc_hd__a211o_2")
+  (INSTANCE _0522_)
+  (DELAY
+   (ABSOLUTE
+    (IOPATH A1 X (0.106:0.106:0.106) (0.275:0.275:0.275))
+    (IOPATH A2 X (0.152:0.152:0.152) (0.331:0.331:0.331))
+    (IOPATH B1 X (0.082:0.083:0.083) (0.290:0.290:0.291))
+    (IOPATH C1 X (0.077:0.079:0.080) (0.256:0.256:0.256))
+   )
+  )
+ )
+```
