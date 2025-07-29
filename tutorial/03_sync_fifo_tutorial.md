@@ -58,7 +58,7 @@ This block implements the core logic of the FIFO:
 - On each **clock edge**, it performs one of the following based on `push` and `pop` signals:
   - `push = 0`, `pop = 1`: Read (pop) data from the FIFO if it's not empty.
   - `push = 1`, `pop = 0`: Write (push) data to the FIFO if it's not full.
-  - `push = 1`, `pop = 1`: Simultaneous write and read (used to keep the FIFO full but rotating).
+  - `push = 1`, `pop = 1`: Simultaneous write and read.
 
 This logic updates the pointers and element count to reflect the FIFO state.
 
