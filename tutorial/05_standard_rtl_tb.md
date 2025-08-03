@@ -16,6 +16,7 @@ interface fifo_if(input clk, rstn);
     logic [4:0] count;
     logic [7:0] data_out;
 endinterface
+```
 
 #### Connecting Interface to DUT in the Top Module
 
@@ -35,6 +36,6 @@ In the top module, we instantiate a single instance of the FIFO interface and co
         .count(m_fifo_if.count),
         .data_out(m_fifo_if.data_out)
     );
-
+```
 
 
