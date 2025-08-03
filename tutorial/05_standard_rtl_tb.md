@@ -52,4 +52,13 @@ In the driver (**put link here**), we receive a sequence item and assign its val
 ```
 please refer to (**put link here**) sequence item class to learn its properties.
 
+#### Scoreboard Report After Simulation
+
+Once the simulation completes, the scoreboard prints the final results during the `report_phase`. As expected, the simulation passes successfully with all transactions matching and no mismatches reported.
+```code
+UVM_INFO ../../common/uvm_tb/env/fifo_scb.sv(69) @ 6150: uvm_test_top.m_fifo_base_env.m_fifo_scb [RPT] matchs: 33, mismatches: 0
+```
+
+
+
 
