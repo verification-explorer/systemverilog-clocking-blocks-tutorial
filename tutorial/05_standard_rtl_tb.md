@@ -17,4 +17,24 @@ interface fifo_if(input clk, rstn);
     logic [7:0] data_out;
 endinterface
 
+#### Connecting Interface to DUT in the Top Module
+
+In the top module, we instantiate a single instance of the FIFO interface and connect its signals directly to the DUT ports.
+
+```systemverilog
+    fifo_if m_fifo_if(.clk(clk), .rstn(rstn));
+
+    uart_tx_fifo i_uart_tx_fifo(
+        .clk(clk),
+        .rstn(rstn),
+        .push(m_fifo_if.push),
+        .pop(m_fifo_if.pop),
+        .data_in(m_fifo_if.data_in),
+        .fifo_empty(m_fifo_if.fifo_empty),
+        .fifo_full(m_fifo_if.fifo_full),
+        .count(m_fifo_if.count),
+        .data_out(m_fifo_if.data_out)
+    );
+
+
 
