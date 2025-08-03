@@ -49,7 +49,7 @@ In the driver (**put link here**), we receive a sequence item and assign its val
         m_fifo_if.push     <= req.get_push();
         m_fifo_if.data_in  <= req.get_data_in();
     endtask
-
+```
 please refer to (**put link here**) sequence item class to learn its properties.
 
 
