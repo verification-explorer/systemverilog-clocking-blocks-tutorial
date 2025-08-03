@@ -52,6 +52,30 @@ In the driver (**put link here**), we receive a sequence item and assign its val
 ```
 please refer to (**put link here**) sequence item class to learn its properties.
 
+#### Sampling DUT Signals in the Monitor
+
+In the monitor, we sample the DUT's inputs and outputs on every positive clock edge. At each cycle, a new sequence item is created, populated with the current interface signal values, and then written to the analysis port for further processing.
+
+```systemverilog
+task run_phase(uvm_phase phase);
+    super.run_phase(phase);
+    wait_reset();
+    forever begin
+        @(posedge m_fifo_if.clk);
+        item = fifo_item::type_id::create("item", this);
+        item.push       = m_fifo_if.push;
+        item.pop        = m_fifo_if.pop;
+        item.data_in    = m_fifo_if.data_in;
+        item.data_out   = m_fifo_if.data_out;
+        item.fifo_empty = m_fifo_if.fifo_empty;
+        item.fifo_full  = m_fifo_if.fifo_full;
+        item.count      = m_fifo_if.count;
+        fifo_port.write(item);
+    end
+endtask
+```
+
+
 #### Scoreboard Report After Simulation
 
 Once the simulation completes, the scoreboard prints the final results during the `report_phase`. As expected, the simulation passes successfully with all transactions matching and no mismatches reported.
