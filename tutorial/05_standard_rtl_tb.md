@@ -83,6 +83,14 @@ Once the simulation completes, the scoreboard prints the final results during th
 UVM_INFO ../../common/uvm_tb/env/fifo_scb.sv(69) @ 6150: uvm_test_top.m_fifo_base_env.m_fifo_scb [RPT] matchs: 33, mismatches: 0
 ```
 
+#### Gate-Level Simulation and Scoreboard Check
+
+The next step is to repeat the simulation using the gate-level netlist. This allows us to check for any discrepancies or issues that may arise in the scoreboard results compared to the RTL simulation.
+We observe that the simulation produces multiple mismatches. Let’s analyze the root cause and understand why these discrepancies occur.
+```code
+UVM_INFO ../../common/uvm_tb/env/fifo_scb.sv(69) @ 615000: uvm_test_top.m_fifo_base_env.m_fifo_scb [RPT] matchs: 0, mismatches: 31
+UVM_ERROR :   31
+```
 
 
 
