@@ -20,7 +20,7 @@ endinterface
 
 #### Connecting Interface to DUT in the Top Module
 
-In the top (** put link here **)module, we instantiate a single instance of the FIFO interface and connect its signals directly to the DUT ports.
+In the top (**put link here**)module, we instantiate a single instance of the FIFO interface and connect its signals directly to the DUT ports.
 
 ```systemverilog
     fifo_if m_fifo_if(.clk(clk), .rstn(rstn));
@@ -37,5 +37,18 @@ In the top (** put link here **)module, we instantiate a single instance of the 
         .data_out(m_fifo_if.data_out)
     );
 ```
+
+#### Driving Inputs from Sequence Item
+
+In the driver (**put link here**), we receive a sequence item and assign its values to the interface inputs. The assignments are synchronized to the positive edge of the clock to ensure correct timing behavior.
+
+```systemverilog
+    task drive(fifo_item req);
+        @(posedge m_fifo_if.clk);
+        m_fifo_if.pop      <= req.get_pop();
+        m_fifo_if.push     <= req.get_push();
+        m_fifo_if.data_in  <= req.get_data_in();
+    endtask
+
 
 
