@@ -46,3 +46,66 @@ drv_cb.push <= 1;
 In this case, drv_cb.push is a clockvar—a special variable managed by the clocking block itself. Clockvars ensure that signal interactions are properly timed with respect to the clocking event, handling both sampling from the DUT and driving to the DUT.
 
 Although it's technically possible to read from or write to the signals directly, **testbenches should always use clockvars to interact with DUT signals**. This ensures proper synchronization between the testbench and the DUT—exactly the role clocking blocks are designed to fulfill.
+
+## Traditional Signal Access in Testbenches
+
+In a typical testbench without clocking blocks, signal interactions are manually synchronized to the clock using `@ (posedge clk)`. After the clock event, signals are either sampled from or driven to the DUT.
+
+Examples:
+
+Sampling from the DUT:
+```systemverilog
+task run_phase (uvm_phase phase);
+  forever begin
+    @(posedge vif.clk);
+    item.data_out = vif.data_out;
+    // ...
+  end
+endtask
+```
+Driving to the DUT:
+task run_phase (uvm_phase phase);
+  forever begin
+    @(posedge vif.clk);
+    vif.data_in <= item.data_in;
+    // ...
+  end
+endtask
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
