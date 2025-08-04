@@ -98,6 +98,11 @@ class fifo_mntr extends uvm_monitor;
 endclass
 ```
 
+## Verifying Clocking Block Effectiveness with Gate-Level Netlist
+
+At this stage, we’ll examine the waveforms to observe how the use of clocking blocks successfully resolved the issues we encountered when running the UVM test with the gate-level netlist.
+
+
 
 
 
