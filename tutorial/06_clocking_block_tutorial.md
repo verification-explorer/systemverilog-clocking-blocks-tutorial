@@ -45,4 +45,4 @@ drv_cb.push <= 1;
 ```
 In this case, drv_cb.push is a clockvar—a special variable managed by the clocking block itself. Clockvars ensure that signal interactions are properly timed with respect to the clocking event, handling both sampling from the DUT and driving to the DUT.
 
-Although it's technically possible to read from or write to the signals directly, testbenches should always use clockvars to interact with DUT signals. This ensures proper synchronization between the testbench and the DUT—exactly the role clocking blocks are designed to fulfill.
+Although it's technically possible to read from or write to the signals directly, **testbenches should always use clockvars to interact with DUT signals**. This ensures proper synchronization between the testbench and the DUT—exactly the role clocking blocks are designed to fulfill.
