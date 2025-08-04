@@ -109,7 +109,7 @@ To begin debugging this issue, we first examine `ip_counter`—an internal desig
 We observe that the `push` signal is asserted on the positive edge of the clock, but `ip_count_0` changes immediately afterward within the same cycle. This behavior is incorrect, as `ip_count` is a sampled (sequential) signal and should only update on the **next** clock cycle—not during the current one.
 
 
-![ip_counter_error](/figures/ip_count_0_synth_path.png)
+![ip_counter_error](/figures/gate_level_ip_counter_error.png)
 
 
 
