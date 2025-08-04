@@ -62,5 +62,11 @@ chnages 33ps after flop output changes (tProp). so we can see that unlike digita
 
 ![xor flop_analog_plot](/figures/xor_ff_analog_plot.png "xor flop analog_plot")
 
+## Project Directory Structure Overview
+
+In the next slide, we will walk through the structure of the project directory and explain the purpose of each component.
+[project directory structure](02_directory_structure.md)
+
+
 
 
