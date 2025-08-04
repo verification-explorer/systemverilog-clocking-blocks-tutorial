@@ -30,6 +30,7 @@ default clocking drv_cb @ (posedge clk);
     // Outputs to DUT
     output push, pop, data_in;
 endclocking
+```
 
 While clocking blocks also allow you to specify individual timing controls for each signal and offer additional configuration options, we’ll keep things simple in this tutorial. 
 
