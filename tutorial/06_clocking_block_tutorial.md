@@ -96,7 +96,7 @@ Driving to the DUT:
 ```systemverilog
 task run_phase (uvm_phase phase);
   forever begin
-    @(posedge vif.drv_cb);
+    @ vif.drv_cb;
     vif.drv_cb.data_in <= item.data_in;
     // ...
   end
