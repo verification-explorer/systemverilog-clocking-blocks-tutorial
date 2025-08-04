@@ -8,5 +8,5 @@ The diagram below, based on the work of Bromley and Johnston, illustrates how si
 In our earlier gate-level simulation of the standard testbench use case, we observed that `data_in` was driven exactly at the clock’s rising edge. Due to clock skew between the DUT and testbench, this caused a glitch at the input of the `ip_count` flip-flop—leading to incorrect behavior.
 
 By following this sample/drive timing scheme, we can properly align the communication between the testbench and the DUT. This is precisely what SystemVerilog **clocking blocks** are designed to achieve.
-![Synchronous sampling and driving](/figures/Synchronous_sampling_and_driving.png)
+![Synchronous sampling and driving](/figures/synchronous_sampling_and_driving.png)
 
