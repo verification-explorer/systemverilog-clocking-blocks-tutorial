@@ -118,6 +118,13 @@ Let’s examine the synthesis output to locate the logic associated with `ip_cou
 
 ![ip_counter_synth](/figures/ip_count_0_synth_path.png)
 
+#### Root Cause — Glitch at `ip_count_0` Input
+
+A small glitch appears at the input of `ip_count_0` just before the clock's rising edge, leading to incorrect behavior. This occurs because the testbench drives `data_in` precisely at the clock’s posedge. However, due to internal clock skew in the synthesized design, the flip-flop receives a slightly delayed version of the clock. As a result, the glitch is sampled by the flop, causing the synchronous FIFO to lose alignment with the testbench—ultimately leading to a complete test failure.
+
+This issue would not occur in RTL simulation, where all sequential elements share the same ideal clock. In that case, the event scheduling mechanism (active followed by non-blocking regions) ensures proper sampling of inputs and orderly update of outputs, as explained in the introduction slide.
+
+
 
 ![ip_count_glitch](/figures/ip_count_glitch.png)
 
