@@ -101,6 +101,8 @@ UVM_ERROR ../../common/uvm_tb/env/fifo_scb.sv(55) @ 45000: uvm_test_top.m_fifo_b
 
 This indicates that at simulation time 45,000ps (or 45ns), the FIFO received a read (`pop`) request. However, the data output from the FIFO (`d`) did not match the expected value (`d8`) stored internally in the scoreboard.
 
+![uvm_first_reported_error.png](/figures/uvm_first_error_wave_1.png)
+
 
 
 
