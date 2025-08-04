@@ -103,6 +103,13 @@ task run_phase (uvm_phase phase);
 endtask
 ```
 
+## Understanding `#1step` Input Skew
+
+Using an input skew of `#1step` (representing `tSU`) ensures that the simulator samples outputs from the DUT just **before** the clock changes state. This timing helps mimic real hardware behavior where data must be stable before the active clock edge.
+
+While the SystemVerilog LRM provides more details about skew handling, in most practical cases, `#1step` is sufficient.
+
+Note that `#1step` is **not a real-time delay** like `#1ns`; it represents a simulation timestep, part of the simulator’s internal event scheduling, not actual elapsed time.
 
 
 
