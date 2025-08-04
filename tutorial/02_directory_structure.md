@@ -30,4 +30,4 @@
 ## Understanding Synchronized Flip-Flops
 
 In the next slide, we will explore how synchronized FIFO operates.
-[sync_FIFO_](03_sync_fifo_tutorial.md)
+[sync_FIFO](03_sync_fifo_tutorial.md)
