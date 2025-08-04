@@ -1,8 +1,8 @@
-### Standard Simulation Flow
+# Standard Simulation Flow
 
 In the standard scenario, we will simulate the design twice: once using the RTL and once using the gate-level netlist.
 
-#### Simple FIFO Interface for Case Study
+## Simple FIFO Interface for Case Study
 
 For this case study, we will use a simple interface that represents the inputs and outputs of a synchronous FIFO. Notice that all signals are declared as `logic` types. This is intentional, as `logic` is a 4-state variable capable of holding values like `1'bX` (unknown) or `1'bZ` (high impedance). Using `logic` helps us catch undesirable conditions such as X-propagation during simulation.
 
@@ -18,7 +18,7 @@ interface fifo_if(input clk, rstn);
 endinterface
 ```
 
-#### Connecting Interface to DUT in the Top Module
+## Connecting Interface to DUT in the Top Module
 
 In the top (**put link here**)module, we instantiate a single instance of the FIFO interface and connect its signals directly to the DUT ports.
 
@@ -38,7 +38,7 @@ In the top (**put link here**)module, we instantiate a single instance of the FI
     );
 ```
 
-#### Driving Inputs from Sequence Item
+## Driving Inputs from Sequence Item
 
 In the driver (**put link here**), we receive a sequence item and assign its values to the interface inputs. The assignments are synchronized to the positive edge of the clock to ensure correct timing behavior.
 
@@ -52,7 +52,7 @@ In the driver (**put link here**), we receive a sequence item and assign its val
 ```
 please refer to (**put link here**) sequence item class to learn its properties.
 
-#### Sampling DUT Signals in the Monitor
+## Sampling DUT Signals in the Monitor
 
 In the monitor, we sample the DUT's inputs and outputs on every positive clock edge. At each cycle, a new sequence item is created, populated with the current interface signal values, and then written to the analysis port for further processing.
 
@@ -76,14 +76,14 @@ endtask
 ```
 
 
-#### Scoreboard Report After Simulation
+## Scoreboard Report After Simulation
 
 Once the simulation completes, the scoreboard prints the final results during the `report_phase`. As expected, the simulation passes successfully with all transactions matching and no mismatches reported.
 ```code
 UVM_INFO ../../common/uvm_tb/env/fifo_scb.sv(69) @ 6150: uvm_test_top.m_fifo_base_env.m_fifo_scb [RPT] matchs: 33, mismatches: 0
 ```
 
-#### Gate-Level Simulation and Scoreboard Check
+## Gate-Level Simulation and Scoreboard Check
 
 The next step is to repeat the simulation using the gate-level netlist. This allows us to check for any discrepancies or issues that may arise in the scoreboard results compared to the RTL simulation.
 We observe that the simulation produces multiple mismatches. Let’s analyze the root cause and understand why these discrepancies occur.
@@ -92,7 +92,7 @@ UVM_INFO ../../common/uvm_tb/env/fifo_scb.sv(69) @ 615000: uvm_test_top.m_fifo_b
 UVM_ERROR :   31
 ```
 
-#### Analyzing the First Mismatch Error
+## Analyzing the First Mismatch Error
 
 The first error reported by the scoreboard appears as follows:
 ```code
@@ -103,7 +103,7 @@ This indicates that at simulation time 45,000ps (or 45ns), the FIFO received a r
 
 ![uvm_first_reported_error](/figures/uvm_first_error_wave_1.png)
 
-#### Inspecting `ip_counter` for Debugging
+## Inspecting `ip_counter` for Debugging
 
 To begin debugging this issue, we first examine `ip_counter`—an internal design variable responsible for determining the storage location of incoming data when the `push` signal is asserted.
 We observe that the `push` signal is asserted on the positive edge of the clock, but `ip_count_0` changes immediately afterward within the same cycle. This behavior is incorrect, as `ip_count` is a sampled (sequential) signal and should only update on the **next** clock cycle—not during the current one.
@@ -112,13 +112,13 @@ We observe that the `push` signal is asserted on the positive edge of the clock,
 ![ip_counter_error](/figures/gate_level_ip_counter_error.png)
 
 
-#### Reviewing Synthesized Logic for `ip_count_0`
+## Reviewing Synthesized Logic for `ip_count_0`
 
 Let’s examine the synthesis output to locate the logic associated with `ip_count_0` and investigate what might have caused the unexpected behavior.
 
 ![ip_counter_synth](/figures/ip_count_0_synth_path.png)
 
-#### Root Cause — Glitch at `ip_count_0` Input
+## Root Cause — Glitch at `ip_count_0` Input
 
 A small glitch appears at the input of `ip_count_0` just before the clock's rising edge, leading to incorrect behavior. This occurs because the testbench drives `data_in` precisely at the clock’s posedge. However, due to internal clock skew in the synthesized design, the flip-flop receives a slightly delayed version of the clock. As a result, the glitch is sampled by the flop, causing the synchronous FIFO to lose alignment with the testbench—ultimately leading to a complete test failure.
 
@@ -127,6 +127,11 @@ This issue would not occur in RTL simulation, where all sequential elements shar
 
 
 ![ip_count_glitch](/figures/ip_count_glitch.png)
+
+## Transition to Clocking Blocks
+
+In the next slide, we will begin our SystemVerilog clocking blocks tutorial. In the following slides, we'll explore how clocking blocks effectively address synchronization issues observed in the testbench-to-DUT interaction.
+
 
 
 
