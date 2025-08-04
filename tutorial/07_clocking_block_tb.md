@@ -1,4 +1,3 @@
-# Use of Clocking Block in UVM TB
 ## Defining the Interface with Clocking Blocks
 
 We’ll begin our clocking block-based testbench by defining the interface. This interface contains two clocking blocks:
