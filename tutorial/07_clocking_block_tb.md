@@ -6,7 +6,7 @@ We’ll begin our clocking block-based testbench by defining the interface. This
    - `input` signals: from the DUT to the testbench
    - `output` signals: from the testbench to the DUT
 
-2. **`mon_cb` (Monitor Clocking Block)** – All signals are declared as `input`, since the monitor's role is purely observational and should not drive any values.
+2. **`mntr_cb` (Monitor Clocking Block)** – All signals are declared as `input`, since the monitor's role is purely observational and should not drive any values.
 
 This separation allows for clean, directional control and ensures proper synchronization between the DUT and testbench components.
 
