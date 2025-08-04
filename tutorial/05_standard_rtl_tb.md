@@ -101,11 +101,15 @@ UVM_ERROR ../../common/uvm_tb/env/fifo_scb.sv(55) @ 45000: uvm_test_top.m_fifo_b
 
 This indicates that at simulation time 45,000ps (or 45ns), the FIFO received a read (`pop`) request. However, the data output from the FIFO (`d`) did not match the expected value (`d8`) stored internally in the scoreboard.
 
-![uvm_first_reported_error.png](/figures/uvm_first_error_wave_1.png)
+![uvm_first_reported_error](/figures/uvm_first_error_wave_1.png)
 
 #### Inspecting `ip_counter` for Debugging
 
 To begin debugging this issue, we first examine `ip_counter`—an internal design variable responsible for determining the storage location of incoming data when the `push` signal is asserted.
+We observe that the `push` signal is asserted on the positive edge of the clock, but `ip_count_0` changes immediately afterward within the same cycle. This behavior is incorrect, as `ip_count` is a sampled (sequential) signal and should only update on the **next** clock cycle—not during the current one.
+
+
+![ip_counter_error](/figures/ip_count_0_synth_path.png)
 
 
 
