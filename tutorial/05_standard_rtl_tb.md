@@ -103,6 +103,11 @@ This indicates that at simulation time 45,000ps (or 45ns), the FIFO received a r
 
 ![uvm_first_reported_error.png](/figures/uvm_first_error_wave_1.png)
 
+#### Inspecting `ip_counter` for Debugging
+
+To begin debugging this issue, we first examine `ip_counter`—an internal design variable responsible for determining the storage location of incoming data when the `push` signal is asserted.
+
+
 
 
 
