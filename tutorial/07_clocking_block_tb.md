@@ -53,3 +53,52 @@ in top module nothing special usual interface to DUT connection
         .data_out(m_fifo_if.data_out)
         );
 ```
+
+## Driving Signals Using Clocking Block in the Driver
+
+As explained in the tutorial, the driver uses the **clocking block name** to synchronize signal assignments. The **clockvars** (signals defined within the clocking block) are driven with values taken from the sequence item, ensuring that all signal updates are correctly aligned with the clocking event.
+
+```systemverilog
+class fifo_drv extends uvm_driver #(fifo_item);
+
+    virtual fifo_if m_fifo_if;
+
+    `define tb_drv_if m_fifo_if.drv_cb
+
+    ...
+
+    task drive(fifo_item req);
+        @(`tb_drv_if);
+        `tb_drv_if.pop <= req.get_pop();
+        ...
+    endtask
+
+endclass
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
