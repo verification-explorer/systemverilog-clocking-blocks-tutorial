@@ -77,6 +77,31 @@ task run_phase (uvm_phase phase);
 endtask
 ```
 
+## Synchronizing to Clocking Block Events
+
+When using clocking blocks, the testbench should **synchronize itself to the clocking block's event**, rather than directly to the raw clock signal. This is done by waiting on the **named clocking block event**, which encapsulates the correct timing behavior.
+
+```systemverilog
+task run_phase (uvm_phase phase);
+  forever begin
+    @ mntr_drv;
+    item.data_out = vif.mntr_cb.data_out;
+    // ...
+  end
+endtask
+```
+
+Driving to the DUT:
+
+```systemverilog
+task run_phase (uvm_phase phase);
+  forever begin
+    @(posedge vif.drv_cb);
+    vif.drv_cb.data_in <= item.data_in;
+    // ...
+  end
+endtask
+```
 
 
 
