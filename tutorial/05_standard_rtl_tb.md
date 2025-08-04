@@ -92,5 +92,54 @@ UVM_INFO ../../common/uvm_tb/env/fifo_scb.sv(69) @ 615000: uvm_test_top.m_fifo_b
 UVM_ERROR :   31
 ```
 
+#### Analyzing the First Mismatch Error
+
+The first error reported by the scoreboard appears as follows:
+```code
+UVM_ERROR ../../common/uvm_tb/env/fifo_scb.sv(55) @ 45000: uvm_test_top.m_fifo_base_env.m_fifo_scb [MISMATCH] comparer: d8 != received: d
+```
+
+This indicates that at simulation time 45,000ps (or 45ns), the FIFO received a read (`pop`) request. However, the data output from the FIFO (`d`) did not match the expected value (`d8`) stored internally in the scoreboard.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
