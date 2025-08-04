@@ -112,6 +112,11 @@ While the SystemVerilog LRM provides more details about skew handling, in most p
 Note that `#1step` is **not a real-time delay** like `#1ns`; it represents a simulation timestep, part of the simulator’s internal event scheduling, not actual elapsed time.
 
 
+## Output Skew for Testbench-to-DUT Synchronization
+
+To handle skew from the testbench to the DUT, it's recommended to use a **non-negative output skew**, such as `output #1;`. This ensures that the testbench drives signals **after** the clock event, avoiding race conditions and making the waveform easier to interpret.
+
+In our synchronized FIFO example, applying this output skew resolves the gate-level issues we previously encountered with the standard (non-clocked) approach.
 
 
 
