@@ -119,6 +119,8 @@ Let’s examine the synthesis output to locate the logic associated with `ip_cou
 ![ip_counter_synth](/figures/ip_count_0_synth_path.png)
 
 
+![ip_count_glitch](/figures/ip_count_glitch.png)
+
 
 
 
