@@ -92,7 +92,7 @@ endtask
 ```
 
 Driving to the DUT:
-**output from TB should always use <=** otherwise it will raise error.
+**outputs from TB should always use <=** otherwise it will raise error.
 ```systemverilog
 task run_phase (uvm_phase phase);
   forever begin
