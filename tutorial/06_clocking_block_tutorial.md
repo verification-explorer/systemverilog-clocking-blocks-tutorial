@@ -54,6 +54,7 @@ In a typical testbench without clocking blocks, signal interactions are manually
 Examples:
 
 Sampling from the DUT:
+
 ```systemverilog
 task run_phase (uvm_phase phase);
   forever begin
@@ -63,7 +64,10 @@ task run_phase (uvm_phase phase);
   end
 endtask
 ```
+
 Driving to the DUT:
+
+```systemverilog
 task run_phase (uvm_phase phase);
   forever begin
     @(posedge vif.clk);
