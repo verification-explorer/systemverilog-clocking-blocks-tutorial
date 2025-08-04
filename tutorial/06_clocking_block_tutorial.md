@@ -10,7 +10,7 @@ In our earlier gate-level simulation of the standard testbench use case, we obse
 By following this sample/drive timing scheme, we can properly align the communication between the testbench and the DUT. This is precisely what SystemVerilog **clocking blocks** are designed to achieve.
 ![Synchronous sampling and driving](/figures/synchronous_sampling_and_driving.png)
 
-### Structure of a SystemVerilog Clocking Block
+## Structure of a SystemVerilog Clocking Block
 
 The following SystemVerilog code defines a typical clocking block and explains how it facilitates synchronized communication between the testbench and DUT:
 
@@ -35,3 +35,13 @@ While clocking blocks also allow you to specify individual timing controls for e
 
 If you're interested in exploring the full range of clocking block capabilities, including advanced timing specifications, you're encouraged to consult the SystemVerilog LRM or other trusted resources.
 
+## Using Clocking Block Variables (Clockvars)
+
+To drive or sample a signal using a clocking block, you reference the **clocking block name**, followed by a dot and the **signal name**. For example:
+
+```systemverilog
+drv_cb.push <= 1;
+```
+In this case, drv_cb.push is a clockvar—a special variable managed by the clocking block itself. Clockvars ensure that signal interactions are properly timed with respect to the clocking event, handling both sampling from the DUT and driving to the DUT.
+
+Although it's technically possible to read from or write to the signals directly, testbenches should always use clockvars to interact with DUT signals. This ensures proper synchronization between the testbench and the DUT—exactly the role clocking blocks are designed to fulfill.
