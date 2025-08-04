@@ -119,6 +119,10 @@ To handle skew from the testbench to the DUT, it's recommended to use a **non-ne
 In our synchronized FIFO example, applying this output skew resolves the gate-level issues we previously encountered with the standard (non-clocked) approach.
 
 
+## Applying Clocking Blocks to the Synchronized FIFO
+
+In the next slide, we’ll demonstrate how to integrate a clocking block into our synchronized FIFO testbench and show how it resolves the timing issues we encountered earlier.
+[clocking block tb](07_clocking_block_tb.md)
 
 
 
