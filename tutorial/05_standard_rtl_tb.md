@@ -132,6 +132,8 @@ This issue would not occur in RTL simulation, where all sequential elements shar
 
 In the next slide, we will begin our SystemVerilog clocking blocks tutorial. In the following slides, we'll explore how clocking blocks effectively address synchronization issues observed in the testbench-to-DUT interaction.
 
+[clocking blocks tutorial](06_clocking_block_tutorial.md)
+
 
 
 
