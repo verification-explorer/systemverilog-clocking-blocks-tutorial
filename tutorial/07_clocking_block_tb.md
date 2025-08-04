@@ -54,7 +54,7 @@ in top module nothing special usual interface to DUT connection
         );
 ```
 
-## Driving Signals Using Clocking Block in the Driver
+## Driving and Sampling Signals Using Clocking Block in the Driver and Monitor
 
 As explained in the tutorial, the driver uses the **clocking block name** to synchronize signal assignments. The **clockvars** (signals defined within the clocking block) are driven with values taken from the sequence item, ensuring that all signal updates are correctly aligned with the clocking event.
 
@@ -76,6 +76,27 @@ class fifo_drv extends uvm_driver #(fifo_item);
 endclass
 ```
 
+```systemverilog
+class fifo_mntr extends uvm_monitor;
+
+    virtual fifo_if m_fifo_if;
+
+    `define tb_mntr_if m_fifo_if.mntr_cb
+
+    ...
+
+    task run_phase(uvm_phase phase);
+        ...
+        forever begin
+            @(`tb_mntr_if);
+            item=fifo_item::type_id::create("item", this);
+            item.push       = `tb_mntr_if.push;
+            ...
+        end
+    endtask
+
+endclass
+```
 
 
 
