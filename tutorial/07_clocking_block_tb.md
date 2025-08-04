@@ -36,7 +36,7 @@ interface fifo_if(input clk, rstn);
 endinterface
 ```
 
-in top module nothing sppecial usual interface to DUT connection
+in top module nothing special usual interface to DUT connection
 
 ```systemverilog
     fifo_if m_fifo_if(.clk(clk),.rstn(rstn));
