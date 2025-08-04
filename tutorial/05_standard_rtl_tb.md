@@ -112,6 +112,11 @@ We observe that the `push` signal is asserted on the positive edge of the clock,
 ![ip_counter_error](/figures/gate_level_ip_counter_error.png)
 
 
+#### Reviewing Synthesized Logic for `ip_count_0`
+
+Let’s examine the synthesis output to locate the logic associated with `ip_count_0` and investigate what might have caused the unexpected behavior.
+
+![ip_counter_synth](/figures/ip_count_0_synth_path.png)
 
 
 
