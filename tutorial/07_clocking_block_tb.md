@@ -35,3 +35,21 @@ interface fifo_if(input clk, rstn);
 
 endinterface
 ```
+
+in top module nothing sppecial usual interface to DUT connection
+
+```systemverilog
+    fifo_if m_fifo_if(.clk(clk),.rstn(rstn));
+
+    uart_tx_fifo i_uart_tx_fifo(
+        .clk(clk),
+        .rstn(m_fifo_if.rstn),
+        .push(m_fifo_if.push),
+        .pop(m_fifo_if.pop),
+        .data_in(m_fifo_if.data_in),
+        .fifo_empty(m_fifo_if.fifo_empty),
+        .fifo_full(m_fifo_if.fifo_full),
+        .count(m_fifo_if.count),
+        .data_out(m_fifo_if.data_out)
+        );
+```
