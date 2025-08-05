@@ -102,6 +102,8 @@ endclass
 
 At this stage, we’ll examine the waveforms to observe how the use of clocking blocks successfully resolved the issues we encountered when running the UVM test with the gate-level netlist.
 
+![clocking block waveforms](/figures/clocking_tb_waveform.png)
+
 
 
 
