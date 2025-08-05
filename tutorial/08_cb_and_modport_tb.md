@@ -133,8 +133,14 @@ m_fifo_mntr.sigs = m_fifo_cfg.m_fifo_if;
 m_fifo_drv.sigs = m_fifo_cfg.m_fifo_if;
 ```
 
+## Modport Enforcement in IDE Autocompletion
 
+It's reassuring to see that my IDE’s auto-completion reflects the intended restrictions:  
+I’m only able to access the **reset signal** and the **clocking block structure**—not the raw interface signals.
 
+This behavior confirms that the use of **modports** is working as intended: it **prevents direct access** to interface signals, enforcing clean and controlled interaction through the designated clocking block.
+
+![modport restriction](clocking_modport_restriction.png)
 
 
 
