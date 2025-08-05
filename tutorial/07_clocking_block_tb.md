@@ -160,7 +160,7 @@ default clocking drv_cb @ (posedge clk);
         output negedge push, pop, data_in;
     endclocking
 endclocking
-
+```
 ![clocking block negedge waveforms](/figures/clocking_tb_waveform_negedge_skew.png)
 
 However, this adds complexity—something we aim to avoid in this tutorial.
