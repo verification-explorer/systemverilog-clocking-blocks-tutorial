@@ -1,4 +1,4 @@
-# SystemVerilog Clocking Blocks & Modports Tutorial
+# SystemVerilog Clocking Blocks Tutorial
 
 This repository is a hands-on tutorial for understanding and applying **SystemVerilog clocking blocks** and **modports** in a UVM-based testbench environment.
 
