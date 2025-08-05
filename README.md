@@ -7,6 +7,9 @@ It demonstrates how to:
 - Avoid race conditions and timing issues
 - Build a cleaner, more robust simulation setup — especially at the **gate-level**
 
+This tutorial focuses on keeping things as simple and clear as possible, covering the **basic usage of clocking blocks**.  
+While there are additional advanced features and customization options available, readers are encouraged to explore those further as needed for their verification environments.
+
 ---
 
 ## 🔧 What You'll Learn
