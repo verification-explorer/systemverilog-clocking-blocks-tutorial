@@ -121,6 +121,19 @@ class fifo_mntr extends uvm_monitor;
 endclass
 ```
 
+## Connecting the Interface to Modport Typedefs in the Agent
+
+Within the agent (build phase), we will assign the interface instance to the corresponding **modport typedefs** defined earlier. 
+
+```systemverilog
+m_fifo_mntr.sigs = m_fifo_cfg.m_fifo_if;
+```
+
+```systemverilog
+m_fifo_drv.sigs = m_fifo_cfg.m_fifo_if;
+```
+
+
 
 
 
