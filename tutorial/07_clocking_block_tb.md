@@ -115,23 +115,14 @@ If the output skew had been set to a value **smaller than the SDF delay**, the s
 
 ![clocking block skew waveforms](/figures/clocking_tb_waveform_sdf_skew.png)
 
+## Using `negedge` for TB-DUT Synchronization ?
 
+One tempting approach is to **drive DUT inputs and sample its outputs on the `negedge`** of the clock. 
 
+This idea is appealing because, as testbench developers, we shift our activity **away from the `posedge`**, where most of the action takes place in both RTL and gate-level (SDF) simulations. By doing so, we avoid potential race conditions and significantly simplify the timing logic in the testbench.
 
-
-
-
-
-
-
-
-
-
-
-
-### Slide Title: Using `negedge` for TB-DUT Synchronization — Is It Safe?
-
-Driving and sampling signals at the **negedge** of the clock in a testbench can indeed simplify synchronization between the testbench and the DUT — but **there are trade-offs and caveats**.
+However, this raises an important question:  
+**Does this approach come with any risks or limitations?**
 
 #### ✅ Potential Benefits:
 - **Simplified timing**: If the DUT operates on the posedge and the testbench on the negedge, you naturally avoid race conditions. This separation creates a built-in timing margin.
@@ -142,19 +133,31 @@ Driving and sampling signals at the **negedge** of the clock in a testbench can 
 1. **Gate-level timing issues**: In post-synthesis or post-layout simulations (with SDF), the clock tree may introduce skew and delay. The negedge might **arrive too close** to the posedge at the flop, causing glitches or violating setup/hold requirements.
 2. **Loss of generality**: Designing TB logic around negedge operation assumes all DUT flops are triggered on posedge. This breaks down if the DUT has mixed-edge or dual-edge logic.
 3. **Reduced reusability**: A testbench designed for negedge synchronization may not be portable or reusable for other designs.
-4. **Harder to debug**: Using negedge as a workaround instead of a **controlled timing mechanism** (like clocking blocks) can obscure timing bugs and limit your ability to model delays precisely.
 
-#### ✅ When It's Reasonable:
-- For **early-stage RTL** simulation where simplicity matters and there's **no skew** to worry about.
-- In **academic/tutorial environments** where timing correctness is less critical.
-- For **stimulus-only testbenches** without scoreboards or coverage logic.
+## Adapting the Clocking Block for `negedge` Operation
 
----
+If you decide to operate your testbench on the **negedge** of the clock, you may find that **clocking blocks are no longer strictly necessary**, since you're naturally avoiding timing conflicts with the DUT.
 
-### ✅ Recommendation
+However, if a clocking block is already in use, it can be easily modified to support negedge operation. Here's how you can adjust it:
 
-> If you're aiming for a **simplified setup**, negedge-based TB logic is acceptable *early on*.  
-> However, for **robust, scalable, and timing-accurate verification**, using **clocking blocks** or **dedicated synchronization techniques** is strongly recommended.
+```systemverilog
+default clocking drv_cb @ (negedge clk);
+    default input #1step output #1;
+    ...
+endclocking
+
+### Slide Title: Customizing Clock Edge per Signal (Advanced Use)
+
+If you want your clockvars to operate on the **posedge** by default but need a specific signal (e.g., `push`) to be driven on the **negedge**, you can override the edge for that individual signal using syntax like:
+
+```systemverilog
+output negedge push;
+```
+This causes only push to be driven on the falling edge, while the rest of the signals still follow the clocking block’s default edge (e.g., posedge).
+
+However, this adds complexity—something we aim to avoid in this tutorial.
+Keep in mind that clocking blocks are flexible and support advanced customization. For more details, refer to the SystemVerilog LRM or other comprehensive resources if you need additional functionality.
+
 
 
 
