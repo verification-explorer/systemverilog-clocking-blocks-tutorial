@@ -71,5 +71,7 @@ It demonstrates how to:
 - **Jonathan Bromley and Keven Johnston, "Taming Testbench Timing: Time's Up for Clocking Block Confusions," SNUG (Synopsys Users Group) 2012 (Austin, TX).**  
   A foundational paper discussing best practices for synchronizing testbenches with DUTs using interfaces and clocking blocks.
 
+- **Clifford E. Cummings, "Applying Stimulus & Sampling Outputs ‐ UVM Verification Testing Techniques"**
+  A concise guide on best practices for driving inputs and sampling outputs in UVM testbenches using SystemVerilog timing constructs.
 
 
