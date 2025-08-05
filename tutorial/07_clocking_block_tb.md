@@ -102,7 +102,12 @@ endclass
 
 At this stage, we’ll examine the waveforms to observe how the use of clocking blocks successfully resolved the issues we encountered when running the UVM test with the gate-level netlist.
 
+From the waveform, we can observe that the `push` signal rises **1ns after the testbench clock edge**, and `ip_count_0` updates **one full clock cycle later**. This confirms that the testbench and DUT are now properly synchronized.
+ 
+
 ![clocking block waveforms](/figures/clocking_tb_waveform.png)
+
+
 
 
 
