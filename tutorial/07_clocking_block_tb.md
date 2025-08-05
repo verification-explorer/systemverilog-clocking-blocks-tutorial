@@ -113,7 +113,7 @@ In our case, the clocking block functions correctly because the **output skew** 
 
 If the output skew had been set to a value **smaller than the SDF delay**, the signals might have arrived too early—leading to potential timing violations or incorrect behavior.
 
-![clocking block waveforms](/figures/clocking_tb_waveform.png)
+![clocking block skew waveforms](/figures/clocking_tb_waveform_sdf_skew.png)
 
 
 
