@@ -140,7 +140,7 @@ I’m only able to access the **reset signal** and the **clocking block structur
 
 This behavior confirms that the use of **modports** is working as intended: it **prevents direct access** to interface signals, enforcing clean and controlled interaction through the designated clocking block.
 
-![modport restriction](clocking_modport_restriction.png)
+![modport restriction](/figures/clocking_modport_restriction.png)
 
 
 
