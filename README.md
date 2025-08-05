@@ -34,6 +34,7 @@ It demonstrates how to:
 ---
 
 ## 📁 Repository Structure
+```text
 .
 ├── clocking // top and agent that include clocking block structure
 │   ├── agents
@@ -61,4 +62,5 @@ It demonstrates how to:
 │   └── tb
 ├── tutorial // markdown tutorial files
 └── xor_flop // xor flop use for subject introduction
+```
 
