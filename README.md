@@ -78,5 +78,6 @@ It demonstrates how to:
   paper focuses on several methodologies used in practice to connect the testbench to the DUT
 
 - **Greg Stitt, "Race Conditions: The Root of All Verilog Evil"**
+   clear explanation of the concepts behind race conditions, how they arise in Verilog and SystemVerilog, and practical strategies for avoiding them
 
 
