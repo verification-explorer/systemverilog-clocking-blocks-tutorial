@@ -77,4 +77,6 @@ It demonstrates how to:
 - **David Rich, "The missing link: the testbench to DUT connection"**
   paper focuses on several methodologies used in practice to connect the testbench to the DUT
 
+- **Greg Stitt, "Race Conditions: The Root of All Verilog Evil"**
+
 
