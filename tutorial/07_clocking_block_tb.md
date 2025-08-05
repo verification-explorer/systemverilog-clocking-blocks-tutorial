@@ -167,7 +167,8 @@ However, this adds complexity—something we aim to avoid in this tutorial.
 Keep in mind that clocking blocks are flexible and support advanced customization. For more details, refer to the SystemVerilog LRM or other comprehensive resources if you need additional functionality.
 
 
-
+In the next slide, we’ll demonstrate how to integrate a clocking block into our synchronized FIFO testbench and show how it resolves the timing issues we encountered earlier.
+[clocking blocks and modports](08_cb_and_modport_tb.md)
 
 
 
