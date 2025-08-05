@@ -152,8 +152,12 @@ endclocking
 If you want your clockvars to operate on the **posedge** by default but need a specific signal (e.g., `push`) to be driven on the **negedge**, you can override the edge for that individual signal using syntax like:
 
 ```systemverilog
-output negedge push;
-```
+default clocking drv_cb @ (negedge clk);
+    default input #1step output #1;
+    output negedge push;
+    ...
+endclocking
+
 This causes only push to be driven on the falling edge, while the rest of the signals still follow the clocking block’s default edge (e.g., posedge).
 
 However, this adds complexity—something we aim to avoid in this tutorial.
