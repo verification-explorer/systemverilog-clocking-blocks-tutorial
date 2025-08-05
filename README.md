@@ -82,4 +82,12 @@ It demonstrates how to:
 
 - [**UVM scheduling and the need for Clocking Blocks**](https://verificationacademy.com/forums/t/uvm-scheduling-and-the-need-for-clocking-blocks/40325)
 
+## 🏫 Explore
+
+This project uses the **Sky130** process for gate-level simulation.  
+If you'd like to run simulations or explore the code yourself, make sure to clone the required PDK and place it under the `common/` directory:
+
+```bash
+git clone https://github.com/google/skywater-pdk-libs-sky130_fd_sc_hd.git common/sky130_fd_sc_hd
+```
 
