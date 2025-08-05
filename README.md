@@ -80,4 +80,6 @@ It demonstrates how to:
 - **Greg Stitt, "Race Conditions: The Root of All Verilog Evil"**
    clear explanation of the concepts behind race conditions, how they arise in Verilog and SystemVerilog, and practical strategies for avoiding them
 
+- [**UVM scheduling and the need for Clocking Blocks**](https://verificationacademy.com/forums/t/uvm-scheduling-and-the-need-for-clocking-blocks/40325)
+
 
