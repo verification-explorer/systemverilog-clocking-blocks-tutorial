@@ -85,3 +85,22 @@ interface fifo_if(input clk, rstn);
 endinterface
 ```
 
+## Defining Virtual Interface Types in the Agent Package
+
+Next, within the agent package, we use SystemVerilog `typedef` to define:
+
+- A **virtual interface pointer** to the **driver modport** (for use in the driver).
+- A **virtual interface pointer** to the **monitor modport** (for use in the monitor).
+
+These type definitions make it easier to pass modport-specific virtual interfaces to UVM components while ensuring restricted and well-defined access to interface signals.
+
+```systemverilog
+package fifo_pkg;
+    ...
+    typedef virtual fifo_if.DRV cb_drv_modport;
+    typedef virtual fifo_if.MNTR cb_mntr_modport;
+    ...
+endpackage
+```
+
+
