@@ -147,7 +147,7 @@ default clocking drv_cb @ (negedge clk);
 endclocking
 ```
 
-### Slide Title: Customizing Clock Edge per Signal (Advanced Use)
+## Customizing Clock Edge per Signal (Advanced Use)
 
 If you want your clockvars to operate on the **posedge** by default but need a specific signal (e.g., `push`) to be driven on the **negedge**, you can override the edge for that individual signal using syntax like:
 
