@@ -129,6 +129,33 @@ If the output skew had been set to a value **smaller than the SDF delay**, the s
 
 
 
+### Slide Title: Using `negedge` for TB-DUT Synchronization — Is It Safe?
+
+Driving and sampling signals at the **negedge** of the clock in a testbench can indeed simplify synchronization between the testbench and the DUT — but **there are trade-offs and caveats**.
+
+#### ✅ Potential Benefits:
+- **Simplified timing**: If the DUT operates on the posedge and the testbench on the negedge, you naturally avoid race conditions. This separation creates a built-in timing margin.
+- **No need for clocking blocks** in simple designs: You can avoid using clocking blocks or additional delays, especially in simpler or legacy testbenches.
+- **Works well in purely synchronous RTL** where there are no additional timing effects like clock skew or SDF.
+
+#### ⚠️ Potential Problems:
+1. **Gate-level timing issues**: In post-synthesis or post-layout simulations (with SDF), the clock tree may introduce skew and delay. The negedge might **arrive too close** to the posedge at the flop, causing glitches or violating setup/hold requirements.
+2. **Loss of generality**: Designing TB logic around negedge operation assumes all DUT flops are triggered on posedge. This breaks down if the DUT has mixed-edge or dual-edge logic.
+3. **Reduced reusability**: A testbench designed for negedge synchronization may not be portable or reusable for other designs.
+4. **Harder to debug**: Using negedge as a workaround instead of a **controlled timing mechanism** (like clocking blocks) can obscure timing bugs and limit your ability to model delays precisely.
+
+#### ✅ When It's Reasonable:
+- For **early-stage RTL** simulation where simplicity matters and there's **no skew** to worry about.
+- In **academic/tutorial environments** where timing correctness is less critical.
+- For **stimulus-only testbenches** without scoreboards or coverage logic.
+
+---
+
+### ✅ Recommendation
+
+> If you're aiming for a **simplified setup**, negedge-based TB logic is acceptable *early on*.  
+> However, for **robust, scalable, and timing-accurate verification**, using **clocking blocks** or **dedicated synchronization techniques** is strongly recommended.
+
 
 
 
