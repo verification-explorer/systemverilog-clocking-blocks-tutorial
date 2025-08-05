@@ -63,4 +63,13 @@ It demonstrates how to:
 ├── tutorial // markdown tutorial files
 └── xor_flop // xor flop use for subject introduction
 ```
+## 📚 References
+
+- **IEEE 1800-2017 SystemVerilog Language Reference Manual (LRM)**  
+  The official standard for SystemVerilog syntax, semantics, and simulation behavior.
+
+- **Jonathan Bromley and Keven Johnston, "Taming Testbench Timing: Time's Up for Clocking Block Confusions," SNUG (Synopsys Users Group) 2012 (Austin, TX).**  
+  A foundational paper discussing best practices for synchronizing testbenches with DUTs using interfaces and clocking blocks.
+
+
 
