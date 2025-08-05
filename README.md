@@ -11,6 +11,14 @@ This tutorial focuses on keeping things as simple and clear as possible, coverin
 While there are additional advanced features and customization options available, readers are encouraged to explore those further as needed for their verification environments.
 
 ---
+### 🎥 Video Tutorial (Hebrew)
+
+This tutorial is accompanied by a series of YouTube videos, currently available in **Hebrew**.  
+You can watch them at the following link:
+
+[📺 YouTube Tutorial Series (Hebrew)](your-link-here)
+
+---
 
 ## 🔧 What You'll Learn
 
