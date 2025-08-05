@@ -107,6 +107,15 @@ From the waveform, we can observe that the `push` signal rises **1ns after the t
 
 ![clocking block waveforms](/figures/clocking_tb_waveform.png)
 
+## Clocking Block Output Skew vs. SDF Delay
+
+In our case, the clocking block functions correctly because the **output skew** (1ns) is greater than the **SDF delay** (814ps). 
+
+If the output skew had been set to a value **smaller than the SDF delay**, the signals might have arrived too early—leading to potential timing violations or incorrect behavior.
+
+![clocking block waveforms](/figures/clocking_tb_waveform.png)
+
+
 
 
 
