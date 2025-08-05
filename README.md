@@ -74,4 +74,7 @@ It demonstrates how to:
 - **Clifford E. Cummings, "Applying Stimulus & Sampling Outputs ‐ UVM Verification Testing Techniques"**
   A concise guide on best practices for driving inputs and sampling outputs in UVM testbenches using SystemVerilog timing constructs.
 
+- **David Rich, "The missing link: the testbench to DUT connection"**
+  paper focuses on several methodologies used in practice to connect the testbench to the DUT
+
 
