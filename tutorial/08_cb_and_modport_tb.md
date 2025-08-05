@@ -92,8 +92,6 @@ Next, within the agent package, we use SystemVerilog `typedef` to define:
 - A **virtual interface pointer** to the **driver modport** (for use in the driver).
 - A **virtual interface pointer** to the **monitor modport** (for use in the monitor).
 
-These type definitions make it easier to pass modport-specific virtual interfaces to UVM components while ensuring restricted and well-defined access to interface signals.
-
 ```systemverilog
 package fifo_pkg;
     ...
@@ -102,5 +100,28 @@ package fifo_pkg;
     ...
 endpackage
 ```
+
+## Declaring Modport Pointers in Driver and Monitor
+
+In the driver and monitor components, we will declare **virtual interface pointers** corresponding to the modport types defined in the agent package.
+
+These pointers will allow each component to interact with the interface in a **modport-specific**, controlled manner.
+
+```systemverilog
+class fifo_drv extends uvm_driver #(fifo_item);
+    cb_drv_modport sigs;
+    ...
+endclass
+```
+
+```systemverilog
+class fifo_mntr extends uvm_monitor;
+    cb_mntr_modport sigs;
+endclass
+```
+
+
+
+
 
 
