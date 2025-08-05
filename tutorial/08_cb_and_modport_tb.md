@@ -117,6 +117,7 @@ endclass
 ```systemverilog
 class fifo_mntr extends uvm_monitor;
     cb_mntr_modport sigs;
+    ...
 endclass
 ```
 
