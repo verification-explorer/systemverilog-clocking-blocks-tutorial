@@ -1,4 +1,4 @@
-# Combining `modport` (module ports) and Clocking Blocks?
+# Combining `modport` (module ports) and Clocking Blocks
 
 According to the **IEEE 1800-2017 SystemVerilog LRM**, `modport` declarations are used within an interface to **restrict access** to signals in specific directions, depending on the role (e.g., master or slave). For example:
 
