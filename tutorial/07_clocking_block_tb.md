@@ -145,6 +145,7 @@ default clocking drv_cb @ (negedge clk);
     default input #1step output #1;
     ...
 endclocking
+```
 
 ### Slide Title: Customizing Clock Edge per Signal (Advanced Use)
 
