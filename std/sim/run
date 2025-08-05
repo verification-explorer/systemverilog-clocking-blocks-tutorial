@@ -1,0 +1,7 @@
+-clean \
+-uvmhome CDNS-1.2 \
+-f file.f \
+-top top \
+-timescale 1ns/1ns \
+-access +rw \
+$*

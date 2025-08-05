@@ -1,0 +1,2 @@
+#e1(05Aug2025:13:57:00): source ./xcelium.d/env.d/env.history.05Aug2025_13_57_00
+s1(05Aug2025:13:57:00):  xrun -f run_synth -gui 

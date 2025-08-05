@@ -1,0 +1,11 @@
+-clean \
+-uvmhome CDNS-1.2 \
+-f file_synth.f \
+-access +rw \
+-top top \
+-timescale 1ns/1ns \
++define+FUNCTIONAL \
++define+UNIT_DELAY=#0 \
+-sdf_cmd_file uart_tx_fifo.sdf_cmd \
+-nowarn SDFNSB \
+$*

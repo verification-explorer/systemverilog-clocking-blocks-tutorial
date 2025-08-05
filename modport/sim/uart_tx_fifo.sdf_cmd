@@ -1,0 +1,4 @@
+COMPILED_SDF_FILE = "../../common/sdf/uart_tx_fifo.sdf.X",
+SCOPE = top.DUT.i_uart_tx_fifo,
+LOG_FILE = "sdf.log",
+MTM_CONTROL = "MAXIMUM";

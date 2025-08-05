@@ -1,0 +1,2 @@
+#e1(21Jul2025:11:47:08): source ./xcelium.d/env.d/env.history.21Jul2025_11_47_08
+s1(21Jul2025:11:47:08):  xrun -clean -access rw -gui top.sv -lic_used -lic_used -s 

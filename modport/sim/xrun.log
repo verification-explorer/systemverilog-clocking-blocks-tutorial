@@ -1,0 +1,445 @@
+xrun: 24.03-s006: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun	24.03-s006: Started on Aug 05, 2025 at 13:56:59 BST
+xrun
+	-f run_synth
+		-clean
+		-uvmhome CDNS-1.2
+		-f file_synth.f
+			+incdir+../agents
+			+incdir+../../common/uvm_tb
+			../agents/fifo_if.sv
+			../agents/fifo_pkg.sv
+			../../common/uvm_tb/fifo_uvm_pkg.sv
+			-f file_std_cells.f
+				-nowarn NODNTW
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/or4
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/or4/sky130_fd_sc_hd__or4_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/or2
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/or2/sky130_fd_sc_hd__or2_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/inv
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/inv/sky130_fd_sc_hd__inv_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/nor2
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/nor2/sky130_fd_sc_hd__nor2_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/buf
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/buf/sky130_fd_sc_hd__buf_1.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/mux2
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/mux2/sky130_fd_sc_hd__mux2_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/mux4
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/mux4/sky130_fd_sc_hd__mux4_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/o21a
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/o21a/sky130_fd_sc_hd__o21a_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/o21a
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/o21a/sky130_fd_sc_hd__o21a_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/nand4b
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/nand4b/sky130_fd_sc_hd__nand4b_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/nand2b
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/nand2b/sky130_fd_sc_hd__nand2b_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/and2
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/and2/sky130_fd_sc_hd__and2_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/and3b
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/and3b/sky130_fd_sc_hd__and3b_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/nor3b
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/nor3b/sky130_fd_sc_hd__nor3b_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/and3
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/and3/sky130_fd_sc_hd__and3_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/nand3
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/nand3/sky130_fd_sc_hd__nand3_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/nand2
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/nand2/sky130_fd_sc_hd__nand2_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/or4bb
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/or4bb/sky130_fd_sc_hd__or4bb_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/or2b
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/or2b/sky130_fd_sc_hd__or2b_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/nand3b
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/nand3b/sky130_fd_sc_hd__nand3b_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/o21ai
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/o21ai/sky130_fd_sc_hd__o21ai_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/a21oi
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/a21oi/sky130_fd_sc_hd__a21oi_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/xor2
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/xor2/sky130_fd_sc_hd__xor2_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/xnor2
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/xnor2/sky130_fd_sc_hd__xnor2_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/o211a
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/o211a/sky130_fd_sc_hd__o211a_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/a31o
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/a31o/sky130_fd_sc_hd__a31o_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/a21o
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/a21o/sky130_fd_sc_hd__a21o_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/o221a
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/o221a/sky130_fd_sc_hd__o221a_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/a22o
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/a22o/sky130_fd_sc_hd__a22o_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/a21boi
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/a21boi/sky130_fd_sc_hd__a21boi_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/nor2b
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/nor2b/sky130_fd_sc_hd__nor2b_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/dfxtp
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/dfxtp/sky130_fd_sc_hd__dfxtp_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/and4
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/and4/sky130_fd_sc_hd__and4_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/and4bb
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/and4bb/sky130_fd_sc_hd__and4bb_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/a221o
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/a221o/sky130_fd_sc_hd__a221o_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/or3b
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/or3b/sky130_fd_sc_hd__or3b_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/o22a
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/o22a/sky130_fd_sc_hd__o22a_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/o31a
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/o31a/sky130_fd_sc_hd__o31a_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/dfrtp
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/dfrtp/sky130_fd_sc_hd__dfrtp_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/and4b
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/and4b/sky130_fd_sc_hd__and4b_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/nor4
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/nor4/sky130_fd_sc_hd__nor4_2.v
+				+incdir+../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/a211o
+				../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/a211o/sky130_fd_sc_hd__a211o_2.v
+			../../common/gl/uart_tx_fifo_synth.v
+			../tb/top.sv
+		-access +rw
+		-top top
+		-timescale 1ns/1ns
+		+define+FUNCTIONAL
+		+define+UNIT_DELAY=#0
+		-sdf_cmd_file uart_tx_fifo.sdf_cmd
+		-nowarn SDFNSB
+	-gui
+	-lic_used
+	-lic_used
+xrun: *N,CLEAN: Removing existing directory ./xcelium.d.
+Compiling UVM packages (uvm_pkg.sv cdns_uvm_pkg.sv) using uvmhome location /pkg/xcelium-24.03.006/tools/methodology/UVM/CDNS-1.2
+file: ../agents/fifo_if.sv
+	interface worklib.fifo_if:sv
+		errors: 0, warnings: 0
+file: ../agents/fifo_pkg.sv
+	package worklib.fifo_pkg:sv
+		errors: 0, warnings: 0
+file: ../../common/uvm_tb/fifo_uvm_pkg.sv
+	package worklib.fifo_uvm_pkg:sv
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/or4/sky130_fd_sc_hd__or4_2.v
+	module worklib.sky130_fd_sc_hd__or4:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__or4_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/or2/sky130_fd_sc_hd__or2_2.v
+	module worklib.sky130_fd_sc_hd__or2:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__or2_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/inv/sky130_fd_sc_hd__inv_2.v
+	module worklib.sky130_fd_sc_hd__inv:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__inv_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/nor2/sky130_fd_sc_hd__nor2_2.v
+	module worklib.sky130_fd_sc_hd__nor2:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__nor2_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/buf/sky130_fd_sc_hd__buf_1.v
+	module worklib.sky130_fd_sc_hd__buf:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__buf_1:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/mux2/sky130_fd_sc_hd__mux2_2.v
+	primitive worklib.sky130_fd_sc_hd__udp_mux_2to1:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__mux2:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__mux2_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/mux4/sky130_fd_sc_hd__mux4_2.v
+	primitive worklib.sky130_fd_sc_hd__udp_mux_4to2:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__mux4:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__mux4_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/o21a/sky130_fd_sc_hd__o21a_2.v
+	module worklib.sky130_fd_sc_hd__o21a:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__o21a_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/nand4b/sky130_fd_sc_hd__nand4b_2.v
+	module worklib.sky130_fd_sc_hd__nand4b:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__nand4b_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/nand2b/sky130_fd_sc_hd__nand2b_2.v
+	module worklib.sky130_fd_sc_hd__nand2b:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__nand2b_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/and2/sky130_fd_sc_hd__and2_2.v
+	module worklib.sky130_fd_sc_hd__and2:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__and2_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/and3b/sky130_fd_sc_hd__and3b_2.v
+	module worklib.sky130_fd_sc_hd__and3b:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__and3b_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/nor3b/sky130_fd_sc_hd__nor3b_2.v
+	module worklib.sky130_fd_sc_hd__nor3b:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__nor3b_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/and3/sky130_fd_sc_hd__and3_2.v
+	module worklib.sky130_fd_sc_hd__and3:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__and3_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/nand3/sky130_fd_sc_hd__nand3_2.v
+	module worklib.sky130_fd_sc_hd__nand3:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__nand3_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/nand2/sky130_fd_sc_hd__nand2_2.v
+	module worklib.sky130_fd_sc_hd__nand2:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__nand2_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/or4bb/sky130_fd_sc_hd__or4bb_2.v
+	module worklib.sky130_fd_sc_hd__or4bb:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__or4bb_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/or2b/sky130_fd_sc_hd__or2b_2.v
+	module worklib.sky130_fd_sc_hd__or2b:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__or2b_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/nand3b/sky130_fd_sc_hd__nand3b_2.v
+	module worklib.sky130_fd_sc_hd__nand3b:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__nand3b_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/o21ai/sky130_fd_sc_hd__o21ai_2.v
+	module worklib.sky130_fd_sc_hd__o21ai:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__o21ai_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/a21oi/sky130_fd_sc_hd__a21oi_2.v
+	module worklib.sky130_fd_sc_hd__a21oi:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__a21oi_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/xor2/sky130_fd_sc_hd__xor2_2.v
+	module worklib.sky130_fd_sc_hd__xor2:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__xor2_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/xnor2/sky130_fd_sc_hd__xnor2_2.v
+	module worklib.sky130_fd_sc_hd__xnor2:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__xnor2_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/o211a/sky130_fd_sc_hd__o211a_2.v
+	module worklib.sky130_fd_sc_hd__o211a:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__o211a_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/a31o/sky130_fd_sc_hd__a31o_2.v
+	module worklib.sky130_fd_sc_hd__a31o:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__a31o_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/a21o/sky130_fd_sc_hd__a21o_2.v
+	module worklib.sky130_fd_sc_hd__a21o:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__a21o_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/o221a/sky130_fd_sc_hd__o221a_2.v
+	module worklib.sky130_fd_sc_hd__o221a:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__o221a_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/a22o/sky130_fd_sc_hd__a22o_2.v
+	module worklib.sky130_fd_sc_hd__a22o:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__a22o_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/a21boi/sky130_fd_sc_hd__a21boi_2.v
+	module worklib.sky130_fd_sc_hd__a21boi:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__a21boi_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/nor2b/sky130_fd_sc_hd__nor2b_2.v
+	module worklib.sky130_fd_sc_hd__nor2b:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__nor2b_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/dfxtp/sky130_fd_sc_hd__dfxtp_2.v
+	primitive worklib.sky130_fd_sc_hd__udp_dff$P:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__dfxtp:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__dfxtp_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/and4/sky130_fd_sc_hd__and4_2.v
+	module worklib.sky130_fd_sc_hd__and4:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__and4_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/and4bb/sky130_fd_sc_hd__and4bb_2.v
+	module worklib.sky130_fd_sc_hd__and4bb:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__and4bb_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/a221o/sky130_fd_sc_hd__a221o_2.v
+	module worklib.sky130_fd_sc_hd__a221o:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__a221o_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/or3b/sky130_fd_sc_hd__or3b_2.v
+	module worklib.sky130_fd_sc_hd__or3b:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__or3b_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/o22a/sky130_fd_sc_hd__o22a_2.v
+	module worklib.sky130_fd_sc_hd__o22a:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__o22a_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/o31a/sky130_fd_sc_hd__o31a_2.v
+	module worklib.sky130_fd_sc_hd__o31a:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__o31a_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/dfrtp/sky130_fd_sc_hd__dfrtp_2.v
+	primitive worklib.sky130_fd_sc_hd__udp_dff$PR:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__dfrtp:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__dfrtp_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/and4b/sky130_fd_sc_hd__and4b_2.v
+	module worklib.sky130_fd_sc_hd__and4b:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__and4b_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/nor4/sky130_fd_sc_hd__nor4_2.v
+	module worklib.sky130_fd_sc_hd__nor4:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__nor4_2:v
+		errors: 0, warnings: 0
+file: ../../common/skywater-pdk-libs-sky130_fd_sc_hd/cells/a211o/sky130_fd_sc_hd__a211o_2.v
+	module worklib.sky130_fd_sc_hd__a211o:v
+		errors: 0, warnings: 0
+	module worklib.sky130_fd_sc_hd__a211o_2:v
+		errors: 0, warnings: 0
+file: ../../common/gl/uart_tx_fifo_synth.v
+	module worklib.uart_tx_fifo:v
+		errors: 0, warnings: 0
+file: ../tb/top.sv
+	module worklib.uart_tx_fifo_wrapper:sv
+		errors: 0, warnings: 0
+	module worklib.top:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		uvm_pkg
+		cdns_uvmapi
+		cdns_assert2uvm_pkg
+		cdns_uvm_pkg
+		fifo_pkg
+		fifo_uvm_pkg
+		top
+	Annotating SDF timing data:
+		Compiled SDF file:     ../../common/sdf/uart_tx_fifo.sdf.X
+		Log file:              sdf.log
+		Backannotation scope:  top.DUT.i_uart_tx_fifo
+		Configuration file:    
+		MTM control:           MAXIMUM
+		Scale factors:         
+		Scale type:            
+	Annotation completed with 0 Errors and 2050 Warnings
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.uart_tx_fifo_wrapper:sv <0x3219c1b5>
+			streams:   7, words:  1736
+		worklib.top:sv <0x57e6474b>
+			streams: 184, words: 152019
+		worklib.fifo_pkg:sv <0x299fe670>
+			streams: 491, words: 483575
+		worklib.fifo_if:sv <0x4ca01848>
+			streams:  25, words: 12632
+		worklib.cdns_uvm_pkg:sv <0x2ba1285a>
+			streams: 237, words: 315010
+		worklib.cdns_uvmapi:svp <0x60b98c73>
+			streams:  27, words: 24998
+		worklib.cdns_assert2uvm_pkg:sv <0x61d6c75c>
+			streams:   3, words:  1370
+		worklib.uvm_pkg:sv <0x490e80ab>
+			streams: 5290, words: 6694198
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                        Instances  Unique
+		Modules:                    1,275      67
+		Interfaces:                     1       1
+		Verilog packages:               6       6
+		UDPs:                         272       3
+		Primitives:                 1,181       8
+		Registers:                 16,741  11,730
+		Scalar wires:               2,563       -
+		Expanded wires:                21       3
+		Named events:                   4      12
+		Initial blocks:               339     169
+		Clocking blocks:                2       2
+		Clocking items:                14      14
+		Parallel blocks:               27      28
+		Pseudo assignments:             9       -
+		Interconnect:               1,465      12
+		Assertions:                     4       4
+		Covergroup Instances:           0       1
+		SV Class declarations:        236     351
+		SV Class specializations:     452     452
+		Simulation timescale:         1ps
+	Writing initial simulation snapshot: worklib.top:sv
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+Running simulation with license features ...
+	Xcelium_Single_Core 24.00, 1 copy - Successful
+SVSEED default: 1
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /pkg/xcelium-24.03.006/tools/xcelium/files/xmsimrc
+xcelium> source /pkg/xcelium-24.03.006/tools/methodology/UVM/CDNS-1.2/additions/sv/files/tcl/uvm_sim.tcl
+xcelium> uvm_phase -stop_at build -end
+Created stop 1:60d84673:uvm
+xcelium> run
+UVM_INFO /pkg/xcelium-24.03.006/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh(412) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+CDNS-UVM-1.2 (24.03-s006)
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test fifo_debug_test...
+0 FS + 12 End-of-build
+xcelium> ^C
+xcelium> exit
+TOOL:	xrun	24.03-s006: Exiting on Aug 05, 2025 at 14:27:25 BST  (total: 00:30:26)

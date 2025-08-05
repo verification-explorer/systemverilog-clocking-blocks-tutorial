@@ -1,0 +1,13 @@
+======================================================================
+
+Annotating SDF timing data:
+  Compiled SDF file:     ../../common/sdf/uart_tx_fifo.sdf.X
+  Log file:              sdf.log
+  Backannotation scope:  top.i_uart_tx_fifo
+  Configuration file:    
+  MTM control:           MAXIMUM
+  Scale factors:         
+  Scale type:            
+
+Time units: 1ns
+
