@@ -1,5 +1,5 @@
 ## Defining the Interface with Clocking Blocks
-:alien:
+
 We’ll begin our clocking block-based testbench by defining the interface. This interface contains two clocking blocks:
 
 1. **`drv_cb` (Driver Clocking Block)** – Configured with:
