@@ -19,7 +19,6 @@ It demonstrates how to:
 - Behavior at RTL vs. gate-level (SDF) simulations
 
 ### ✅ Skew Handling
-- Why `#1step` input and `#1` output skew avoid X-propagation and glitches
 - How clocking blocks resolve DUT-TB synchronization mismatches at gate level
 
 ### ✅ Modports
@@ -31,7 +30,6 @@ It demonstrates how to:
 ### ✅ Clean UVM Integration
 - Defining `typedef` virtual interfaces for each modport in the agent package
 - Declaring and assigning modport-specific interface pointers in the driver and monitor
-- IDEs (e.g., with autocomplete) restrict signal access, improving code safety
 
 ---
 
