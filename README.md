@@ -1,42 +1,39 @@
-### Slide Title: Summary — Clocking Blocks, Modports, and Best Practices
+# SystemVerilog Clocking Blocks & Modports Tutorial
 
-This tutorial covered the practical use of **SystemVerilog clocking blocks** and **modports** to build a robust, synchronized UVM testbench. Below is a summary of the key concepts and takeaways:
+This repository is a hands-on tutorial for understanding and applying **SystemVerilog clocking blocks** and **modports** in a UVM-based testbench environment.
 
----
-
-#### ✅ Clocking Blocks
-- Define a set of signals synchronized to a **specific clock event** (e.g., `@ (posedge clk)`).
-- Use **`clockvars`** (e.g., `drv_cb.push`) to control signal timing between the testbench and DUT.
-- Provide **input/output skew** (e.g., `#1step`) to model realistic setup and hold behavior.
-- Help avoid race conditions and timing issues, especially in **gate-level netlist simulations**.
-- Testbench should synchronize on the **clocking block event**: `@(drv_cb);`
+It demonstrates how to:
+- Synchronize testbench-to-DUT communication
+- Avoid race conditions and timing issues
+- Build a cleaner, more robust simulation setup — especially at the **gate-level**
 
 ---
 
-#### ✅ Simplified Alternatives
-- Driving/sampling signals at the **negedge** can avoid race conditions with a posedge-triggered DUT.
-- This can simplify the testbench structure but may introduce limitations at gate-level or in mixed-clock designs.
+## 🔧 What You'll Learn
+
+### ✅ Clocking Blocks
+- How to define and use a clocking block in your interface
+- Use of `#1step` skew for realistic input sampling (`tSU`)
+- How to drive DUT inputs and sample outputs using `clockvars` like `drv_cb.push`
+- Synchronizing using `@(clocking_block_name)` instead of `@(posedge clk)`
+- Behavior at RTL vs. gate-level (SDF) simulations
+
+### ✅ Skew Handling
+- Why `#1step` input and `#1` output skew avoid X-propagation and glitches
+- How clocking blocks resolve DUT-TB synchronization mismatches at gate level
+
+### ✅ Modports
+- How to define modports for DUT, driver, and monitor
+- Exposing only required signals (e.g., reset and clockvars)
+- Preventing direct access to interface signals from testbench components
+- Enforcing clean access patterns through virtual interfaces
+
+### ✅ Clean UVM Integration
+- Defining `typedef` virtual interfaces for each modport in the agent package
+- Declaring and assigning modport-specific interface pointers in the driver and monitor
+- IDEs (e.g., with autocomplete) restrict signal access, improving code safety
 
 ---
 
-#### ✅ Modports
-- Restrict direct access to interface signals and expose only what's necessary.
-- Common use: 
-  - `modport dut` – for DUT connection
-  - `modport drv` – for driver (expose clocking block + async signals)
-  - `modport mon` – for monitor (inputs only)
-- Prevents misuse by limiting testbench access to **only clockvars and reset**, improving verification safety.
-
----
-
-#### ✅ Integration Tips
-- Define **`typedef` virtual interfaces** for modports in your agent package.
-- Declare these pointers in the driver/monitor components.
-- Connect them in the agent to provide proper scoped access.
-- IDEs will enforce modport restrictions via autocomplete — a nice bonus!
-
----
-
-#### 📌 Final Thought
-Using **clocking blocks with modports** adds a bit of structural overhead, but the payoff is a cleaner, more robust, and timing-accurate testbench—especially critical when working with **SDF-annotated gate-level simulations**.
+## 📁 Repository Structure
 
