@@ -2,8 +2,8 @@
 //   Copyright 2011 Mentor Graphics Corporation
 //   All Rights Reserved Worldwide
 //
-// Modifications:
-// - Converted from SystemVerilog to Verilog-2005 for synthesis compatibility
+//   Modifications:
+//     - Converted from SystemVerilog to Verilog-2005 for synthesis compatibility
 //
 //   Licensed under the Apache License, Version 2.0 (the
 //   "License"); you may not use this file except in
@@ -82,4 +82,5 @@ module uart_tx_fifo(
   end
 
 endmodule
+
 
