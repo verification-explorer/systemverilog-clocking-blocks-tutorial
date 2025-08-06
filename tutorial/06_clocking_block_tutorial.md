@@ -84,7 +84,7 @@ When using clocking blocks, the testbench should **synchronize itself to the clo
 ```systemverilog
 task run_phase (uvm_phase phase);
   forever begin
-    @ mntr_drv;
+    @ vif.mntr_cb;
     item.data_out = vif.mntr_cb.data_out;
     // ...
   end
