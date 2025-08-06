@@ -76,17 +76,17 @@ You can watch them at the following link:
 ```
 ## 📚 References
 
-- **IEEE 1800-2017 SystemVerilog Language Reference Manual (LRM)**  
-  The official standard for SystemVerilog syntax, semantics, and simulation behavior.
-
 - **Jonathan Bromley and Keven Johnston, "Taming Testbench Timing: Time's Up for Clocking Block Confusions," SNUG (Synopsys Users Group) 2012 (Austin, TX).**  
   A foundational paper discussing best practices for synchronizing testbenches with DUTs using interfaces and clocking blocks.
 
-- **Clifford E. Cummings, "Applying Stimulus & Sampling Outputs ‐ UVM Verification Testing Techniques"**
+ - **Clifford E. Cummings, "Applying Stimulus & Sampling Outputs ‐ UVM Verification Testing Techniques"**
   A concise guide on best practices for driving inputs and sampling outputs in UVM testbenches using SystemVerilog timing constructs.
 
 - **David Rich, "The missing link: the testbench to DUT connection"**
   paper focuses on several methodologies used in practice to connect the testbench to the DUT
+
+- **IEEE 1800-2017 SystemVerilog Language Reference Manual (LRM)**  
+  The official standard for SystemVerilog syntax, semantics, and simulation behavior.
 
 - **Greg Stitt, "Race Conditions: The Root of All Verilog Evil"**
    clear explanation of the concepts behind race conditions, how they arise in Verilog and SystemVerilog, and practical strategies for avoiding them
