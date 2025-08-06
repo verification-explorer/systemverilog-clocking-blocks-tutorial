@@ -1,5 +1,9 @@
-> 🚧 **Work in Progress**  
-> This repository is currently under active development. Features, examples, and documentation are being added and refined regularly. Stay tuned! 🙌
+## 🚧 Work in Progress
+
+This tutorial is still being developed. More features and examples will be added soon.
+
+🎥 **YouTube videos** are **not yet available**, but will be uploaded shortly. Please check back soon!
+
 
 # SystemVerilog Clocking Blocks Tutorial
 
