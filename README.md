@@ -46,7 +46,13 @@ You can watch them at the following link:
 
 ## 📚 Table of Contents
 - [01_Intro](/tutorial/01_introduction.md)
-- [01_Clocking_Blocks](tutorial/01_clocking_blocks/README.md)
+- [02_directory_structure](tutorial/02_directory_structure.md)
+- [03_sync FIFO tutorial](tutorial/03_sync_fifo_tutorial.md)
+- [04_UVM tb structure](tutorial/04_uvm_tb_structure.md)
+- [05_standard RTL TB](tutorial/05_standard_rtl_tb.md) **better word would be convetional**
+- [06_clocking block tutorial](tutorial/06_clocking_block_tutorial.md)
+- [07_clocking block tb](tutorial/07_clocking_block_tb.md)
+- [08_clocking block and modports](tutorial/08_cb_and_modport_tb.md)
 
 
 ## 📁 Repository Structure
