@@ -1,10 +1,3 @@
-## 🚧 Work in Progress
-
-This tutorial is still being developed. More features and examples will be added soon.
-
-🎥 **YouTube videos** are **not yet available**, but will be uploaded shortly. Please check back soon!
-
-
 # SystemVerilog Clocking Blocks Tutorial
 
 This repository is a hands-on tutorial for understanding and applying **SystemVerilog clocking blocks** and **modports** in a UVM-based testbench environment.
