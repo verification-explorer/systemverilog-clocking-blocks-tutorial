@@ -16,7 +16,7 @@ While there are additional advanced features and customization options available
 This tutorial is accompanied by a series of YouTube videos, currently available in **Hebrew**.  
 You can watch them at the following link:
 
-[📺 YouTube Tutorial Series (Hebrew)](your-link-here)
+[📺 YouTube Tutorial Series (Hebrew)](https://www.youtube.com/playlist?list=PLCbVpn1DFl1Fm7Sfz_dMvxSXjR6WwEFjf)
 
 ---
 
